@@ -4,6 +4,10 @@ using UnityEngine;
 public class SquareMover : MonoBehaviour
 {
     [SerializeField] private float speed = 5f;
+<<<<<<< HEAD
+=======
+    [SerializeField] private float offsetAngle = -90f; // Ajusta según la orientación de tu sprite en reposo
+>>>>>>> e5987c1 (Avance Proyecto)
 
     private Rigidbody2D body;
     private Vector2 direction;
@@ -29,10 +33,24 @@ public class SquareMover : MonoBehaviour
     private void FixedUpdate()
     {
         body.linearVelocity = direction * speed;
+<<<<<<< HEAD
+=======
+
+        // Solo rotamos si el personaje realmente se está moviendo
+        if (direction != Vector2.zero)
+        {
+            float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            body.MoveRotation(targetAngle + offsetAngle);
+        }
+>>>>>>> e5987c1 (Avance Proyecto)
     }
 
     private void OnDisable()
     {
         if (body != null) body.linearVelocity = Vector2.zero;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> e5987c1 (Avance Proyecto)
