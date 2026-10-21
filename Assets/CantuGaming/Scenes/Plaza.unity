@@ -445,8 +445,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-=======
 --- !u!1001 &1120556082
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -704,7 +702,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
->>>>>>> e5987c1 (Avance Proyecto)
 --- !u!1 &1514907330
 GameObject:
   m_ObjectHideFlags: 0
@@ -738,10 +735,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SquareMover
   speed: 5
-<<<<<<< HEAD
-=======
   offsetAngle: -90
->>>>>>> e5987c1 (Avance Proyecto)
 --- !u!61 &1514907332
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -864,11 +858,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_MaskInteraction: 0
-<<<<<<< HEAD
-  m_Sprite: {fileID: 21300000, guid: 3bbc6510fb89cd8499320c0a24be81fe, type: 3}
-=======
   m_Sprite: {fileID: 0}
->>>>>>> e5987c1 (Avance Proyecto)
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -876,11 +866,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-<<<<<<< HEAD
-  m_WasSpriteAssigned: 1
-=======
   m_WasSpriteAssigned: 0
->>>>>>> e5987c1 (Avance Proyecto)
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
 --- !u!4 &1514907335
@@ -893,16 +879,10 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.5, y: -5, z: 0}
-<<<<<<< HEAD
-  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-=======
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.33333334}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1411458495}
->>>>>>> e5987c1 (Avance Proyecto)
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1621861660
@@ -8578,8 +8558,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
-<<<<<<< HEAD
-=======
 --- !u!1 &2019085686 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8074025081513403215, guid: 0ebe122477c77564f998b5dcade12dc7, type: 3}
@@ -8607,7 +8585,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
->>>>>>> e5987c1 (Avance Proyecto)
 --- !u!1 &2140467182
 GameObject:
   m_ObjectHideFlags: 0
@@ -8620,10 +8597,7 @@ GameObject:
   - component: {fileID: 2140467184}
   - component: {fileID: 2140467183}
   - component: {fileID: 2140467186}
-<<<<<<< HEAD
-=======
   - component: {fileID: 2140467187}
->>>>>>> e5987c1 (Avance Proyecto)
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -8718,8 +8692,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraFollow2D
   target: {fileID: 1514907335}
-<<<<<<< HEAD
-=======
 --- !u!114 &2140467187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8764,7 +8736,6 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
->>>>>>> e5987c1 (Avance Proyecto)
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
