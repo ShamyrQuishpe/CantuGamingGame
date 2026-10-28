@@ -3,6 +3,7 @@ using UnityEngine;
 public class MelcochaSpawner : MonoBehaviour
 {
     [SerializeField] private MelcochaCollectible melcochaPrefab;
+    [SerializeField] private ScoreManager scoreManager;
     [SerializeField] private int initialCount = 3;
     [SerializeField] private Vector2Int minCell = new Vector2Int(-14, -7);
     [SerializeField] private Vector2Int maxCell = new Vector2Int(13, 6);
@@ -37,7 +38,7 @@ public class MelcochaSpawner : MonoBehaviour
             if (Physics2D.OverlapCircle(position, 0.45f) != null) continue;
 
             MelcochaCollectible instance = Instantiate(melcochaPrefab, position, Quaternion.identity);
-            instance.Initialize(this);
+            instance.Initialize(this, scoreManager);
             return;
         }
 

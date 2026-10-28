@@ -152,3 +152,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 216234958c5534b4cb3636cc37ee3f17, type: 3}
   m_Name:
   m_EditorClassIdentifier: Assembly-CSharp::MelcochaCollectible
+  points: 200
