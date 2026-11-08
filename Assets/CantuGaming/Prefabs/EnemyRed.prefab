@@ -156,9 +156,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyChase2D
   target: {fileID: 0}
   speed: 4
+  fleeSpeed: 5
   navigation: {fileID: 0}
   repathInterval: 0.35
   waypointTolerance: 0.08
+  fleeRepathInterval: 1
+  fleeDangerDistance: 4
+  fleeRetargetDistance: 1.5
 --- !u!114 &640000007
 MonoBehaviour:
   m_ObjectHideFlags: 0
