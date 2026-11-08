@@ -24,3 +24,8 @@ Thumbs.db
 
 # Unity caches
 *.unitypackage
+
+# Compilaciones de Unity WebGL
+/BuildWeb.zip
+/BuildWeb/
+
