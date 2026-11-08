@@ -4,8 +4,15 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class EnemyChase2D : MonoBehaviour
 {
+    [Header("Configuración Principal")]
     [SerializeField] private Transform target;
     [SerializeField, Min(0f)] private float speed = 2f;
+    
+    [Header("Gráficos (Asignar a Diablo aquí)")]
+    [SerializeField] private Transform graficos; 
+    [SerializeField] private float ajusteDeAngulo = -90f; // Cambia esto en el inspector si el modelo mira de lado
+
+    [Header("Navegación")]
     [SerializeField] private GridPathfinder2D navigation;
     [SerializeField, Min(0.1f)] private float repathInterval = 0.35f;
     [SerializeField, Min(0.01f)] private float waypointTolerance = 0.08f;
@@ -27,11 +34,9 @@ public class EnemyChase2D : MonoBehaviour
         {
             SquareMover player = FindAnyObjectByType<SquareMover>();
             if (player != null) target = player.transform;
-            else Debug.LogWarning("EnemyChase2D no encontro a Cantuna para perseguir.", this);
         }
 
         if (navigation == null) navigation = FindAnyObjectByType<GridPathfinder2D>();
-        if (navigation == null) Debug.LogWarning("EnemyChase2D no encontro la navegacion; perseguira en linea recta.", this);
     }
 
     private void FixedUpdate()
@@ -55,13 +60,7 @@ public class EnemyChase2D : MonoBehaviour
             nextRepathTime = Time.time + repathInterval;
         }
 
-        if (!hasPath)
-        {
-            body.linearVelocity = Vector2.zero;
-            return;
-        }
-
-        if (waypoints.Count == 0)
+        if (!hasPath || waypoints.Count == 0)
         {
             MoveToward(target.position);
             return;
@@ -78,13 +77,25 @@ public class EnemyChase2D : MonoBehaviour
     {
         Vector2 delta = destination - body.position;
         float distance = delta.magnitude;
+        
         if (distance <= waypointTolerance)
         {
             body.linearVelocity = Vector2.zero;
             return;
         }
 
-        body.linearVelocity = delta / distance * Mathf.Min(speed, distance / Time.fixedDeltaTime);
+        Vector2 direction = delta / distance;
+        body.linearVelocity = direction * Mathf.Min(speed, distance / Time.fixedDeltaTime);
+
+        // --- ROTACIÓN TOP-DOWN (360 GRADOS) ---
+        if (graficos != null && direction.sqrMagnitude > 0.01f)
+        {
+            // Calcula el ángulo en base a la dirección de movimiento
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            
+            // Rota solo el modelo visual en el eje Z (rotación en 2D)
+            graficos.rotation = Quaternion.Euler(0, 0, angle + ajusteDeAngulo);
+        }
     }
 
     private void OnDisable()
