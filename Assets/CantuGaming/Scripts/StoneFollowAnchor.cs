@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [DisallowMultipleComponent]
@@ -10,6 +11,7 @@ public class StoneFollowAnchor : MonoBehaviour
 
     // El ancla actual es la única fuente de verdad sobre quién lleva la piedra.
     public Transform Anchor => anchor;
+    public event Action<Transform> StoneTransferred;
 
     public void SetAnchor(Transform newAnchor)
     {
@@ -24,6 +26,7 @@ public class StoneFollowAnchor : MonoBehaviour
 
         SetAnchor(newAnchor);
         nextAllowedTransferTime = Time.time + transferProtectionSeconds;
+        StoneTransferred?.Invoke(newAnchor);
         return true;
     }
 

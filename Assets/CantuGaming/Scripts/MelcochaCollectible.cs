@@ -6,12 +6,14 @@ public class MelcochaCollectible : MonoBehaviour
 
     private MelcochaSpawner spawner;
     private ScoreManager scoreManager;
+    private GameAudio gameAudio;
     private bool collected;
 
-    public void Initialize(MelcochaSpawner owner, ScoreManager score)
+    public void Initialize(MelcochaSpawner owner, ScoreManager score, GameAudio audio)
     {
         spawner = owner;
         scoreManager = score;
+        gameAudio = audio;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -20,6 +22,7 @@ public class MelcochaCollectible : MonoBehaviour
 
         collected = true;
         scoreManager?.AddPoints(points);
+        gameAudio?.PlayMelcocha();
         spawner?.SpawnReplacement();
         Destroy(gameObject);
     }

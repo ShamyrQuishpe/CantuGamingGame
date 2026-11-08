@@ -20,11 +20,12 @@ public class ScoreDisplay : MonoBehaviour
             scoreStyle = new GUIStyle(GUI.skin.box)
             {
                 alignment = TextAnchor.MiddleLeft,
-                fontSize = 20,
                 padding = new RectOffset(12, 12, 4, 4)
             };
         }
 
-        GUI.Box(new Rect(12, 12, 190, 44), $"Puntos: {scoreManager.Score}", scoreStyle);
+        float boxWidth = Mathf.Max(0f, Mathf.Min(190f, (Screen.width - 36f) * 0.5f));
+        scoreStyle.fontSize = Screen.width < 400 ? 16 : 20;
+        GUI.Box(new Rect(12f, 12f, boxWidth, 44f), $"Puntos: {scoreManager.Score}", scoreStyle);
     }
 }

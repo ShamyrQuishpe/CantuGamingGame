@@ -830,6 +830,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MelcochaSpawner
   melcochaPrefab: {fileID: 8717296661668102341, guid: 914732d294b0dfb4bb9a0dad61739cec, type: 3}
   scoreManager: {fileID: 2300000011}
+  gameAudio: {fileID: 2600000014}
   initialCount: 3
   minCell: {x: -14, y: -7}
   maxCell: {x: 13, y: 6}
@@ -9164,6 +9165,7 @@ GameObject:
   - component: {fileID: 2600000013}
   - component: {fileID: 2600000011}
   - component: {fileID: 2600000012}
+  - component: {fileID: 2600000014}
   m_Layer: 0
   m_Name: Sistema de Game Over
   m_TagString: Untagged
@@ -9183,6 +9185,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa3c7e0efc744538afa3735c3ee2657a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameOverManager
+  matchDurationSeconds: 90
+  stone: {fileID: 1663217089}
+  playerAnchor: {fileID: 129300766}
+  enemyAnchor: {fileID: 1861854388}
 --- !u!114 &2600000012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9195,6 +9201,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f599dbf6a8cc4191b06048a66b4627db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameOverDisplay
+--- !u!114 &2600000014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2600000010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c2e3b6550bf4320ac3f60b5b32d53bc, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::GameAudio
+  backgroundMusic: {fileID: 8300000, guid: fb47c6262f001994faaeedd7992cbdc5, type: 3}
+  melcochaSound: {fileID: 8300000, guid: 90c3035a6469ae144af1cc73e3cb5a2e, type: 3}
+  transferSound: {fileID: 8300000, guid: e2ae959e4105af6408a8eb4124ca3782, type: 3}
+  stone: {fileID: 1663217089}
+  musicVolume: 0.4
+  effectsVolume: 0.85
 --- !u!4 &2600000013
 Transform:
   m_ObjectHideFlags: 0
