@@ -23,9 +23,19 @@ public class EnemyStoneTheftOnContact : MonoBehaviour
 
     private void TryTransferOnContact(Collider2D other)
     {
-        if (!isActiveAndEnabled || other == null || other.GetComponentInParent<SquareMover>() == null) return;
+        if (!isActiveAndEnabled || other == null) return;
+        SquareMover player = other.GetComponentInParent<SquareMover>();
+        if (player == null) return;
         playerContacts.Add(other);
         if (transferredDuringContact || stone == null || playerAnchor == null || enemyAnchor == null) return;
+
+        // Un escudo bloquea solo el robo al jugador; este contacto ya no puede transferir la piedra.
+        PlayerShield2D shield = player.GetComponent<PlayerShield2D>();
+        if (stone.Anchor == playerAnchor && shield != null && shield.TryAbsorbHit())
+        {
+            transferredDuringContact = true;
+            return;
+        }
 
         // El controlador de la piedra decide si el cambio está permitido y aplica la protección.
         bool transferred = stone.TryTransfer(playerAnchor, enemyAnchor);
