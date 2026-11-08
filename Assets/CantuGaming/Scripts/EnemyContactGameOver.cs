@@ -21,6 +21,7 @@ public class EnemyContactGameOver : MonoBehaviour
 
     private void TryEndGame(Collider2D other)
     {
+        if (!isActiveAndEnabled) return;
         if (other.GetComponentInParent<SquareMover>() == null) return;
 
         if (gameOverManager == null) gameOverManager = FindAnyObjectByType<GameOverManager>();
